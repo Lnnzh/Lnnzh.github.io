@@ -152,6 +152,87 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Day09" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/18/Day09/">Day09Python字符串操作</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/18/Day09/" class="archive-article-date">
+  	<time datetime="2018-07-18T03:18:24.858Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Python字符串操作"><a href="#Python字符串操作" class="headerlink" title="Python字符串操作"></a>Python字符串操作</h2><h3 id="ASCII码的转换"><a href="#ASCII码的转换" class="headerlink" title="ASCII码的转换"></a>ASCII码的转换</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(chr(65))</span><br><span class="line"><span class="built_in">print</span>(ord(<span class="string">'A'</span>))</span><br><span class="line"><span class="comment">#结果: A 65</span></span><br></pre></td></tr></table></figure>
+<h3 id="math数学函数"><a href="#math数学函数" class="headerlink" title="math数学函数"></a>math数学函数</h3><p>abs(x) ceil(x) fsum(x) sum(x) exp(x)返回e的x次幂(ex),如math.exp(1) 返回2.718281828459045<br>fabs(x) floor(x) max(x1, x2,…) min(x1, x2,…) pow(x, y) round(x [,n]) sqrt(x)<br>modf(x)返回x的整数部分与小数部分，两部分的数值符号与x相同，整数部分以浮点型表示。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import math</span><br><span class="line"><span class="built_in">print</span>(abs(-10)) <span class="comment">#结果:10</span></span><br><span class="line"><span class="built_in">print</span>(math.ceil(4.4)) <span class="comment">#结果:5</span></span><br><span class="line"><span class="built_in">print</span>(math.fsum([1.2,1.3])) <span class="comment">#结果:2.5</span></span><br><span class="line"><span class="built_in">print</span>(sum(range(5))) <span class="comment">#结果:10</span></span><br><span class="line"><span class="built_in">print</span>(math.exp(2)) <span class="comment">#结果:7.38905609893065</span></span><br><span class="line"><span class="built_in">print</span>(math.floor(4.8)) <span class="comment">#结果:4</span></span><br><span class="line"><span class="built_in">print</span>(min(1,2,3,5)) <span class="comment">#结果:1</span></span><br><span class="line"><span class="built_in">print</span>(max(1,2,5,3)) <span class="comment">#结果:5</span></span><br><span class="line"><span class="built_in">print</span>(math.modf(3.55)) <span class="comment">#结果:(0.5499999999999998, 3.0)</span></span><br><span class="line"><span class="built_in">print</span>(math.pow(2,3)) <span class="comment">#结果:8.0</span></span><br><span class="line"><span class="built_in">print</span>(round(3.145,2)) <span class="comment">#结果:3.15</span></span><br><span class="line"><span class="built_in">print</span>(math.sqrt(4)) <span class="comment">#结果:2.0</span></span><br><span class="line"><span class="built_in">print</span>(math.pi) <span class="comment">#结果:3.141592653589793</span></span><br><span class="line"><span class="built_in">print</span>(math.e) <span class="comment">#结果:2.718281828459045</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="math随机数函数"><a href="#math随机数函数" class="headerlink" title="math随机数函数"></a>math随机数函数</h3><p>引入随机数：import random<br>随机数可以用于数学，游戏，安全等领域中，还经常被嵌入到算法中，用以提高算法效率，并提高程序的安全性</p>
+<pre><code class="bash">import random
+<span class="comment">#random()随机生成下一个实数，它在[0,1)范围内。</span>
+<span class="built_in">print</span>(random.random())
+<span class="comment"># choice(seq)    从序列的元素中随机挑选一个元素</span>
+list1=[<span class="string">'赵斌'</span>,520,521,<span class="string">'咸鱼王'</span>]
+<span class="built_in">print</span>(random.choice(list1))<span class="comment">#结果:520</span>
+<span class="comment">#shuffle(lst)将序列的所有元素随机排序</span>
+random.shuffle(list1)
+<span class="built_in">print</span>(list1) <span class="comment">#结果:['赵斌', 520, '咸鱼王', 521]</span>
+<span class="comment"># randrange ([start,] stop [,step])从指定范围内，按指定基数递增的集合中获取一个随机数，基数缺省值为1</span>
+<span class="comment">#randint([low,high])用于生成一个指定范围内的整数。其中参数low是下限，参数high是上限,</span>
+<span class="built_in">print</span>(random.randrange(1,20,2))
+<span class="built_in">print</span>(random.randint(1,10))
+<span class="comment"># uniform(x, y)随机生成下一个实数(小数)，它在[x,y]范围内。</span>
+<span class="built_in">print</span>(random.uniform(1,10))
+</code></pre>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/07/18/Day09/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Day08" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -159,7 +240,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/17/Day08/">Day08</a>
+      <a class="article-title" href="/2018/07/17/Day08/">Day08Python数学和列表操作</a>
     </h1>
   
 
